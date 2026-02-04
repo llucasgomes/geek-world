@@ -4,9 +4,18 @@ import fastify, {
   FastifyReply,
   FastifyRequest,
 } from "fastify";
+import {
+  serializerCompiler,
+  validatorCompiler,
+  ZodTypeProvider,
+} from "fastify-type-provider-zod";
 
 //Instaciar o servidor
-const server: FastifyInstance = fastify();
+const server: FastifyInstance = fastify().withTypeProvider<ZodTypeProvider>();
+
+//Configurações
+server.setSerializerCompiler(serializerCompiler);
+server.setValidatorCompiler(validatorCompiler);
 
 //Plugins
 server.register(fastifyCors);
