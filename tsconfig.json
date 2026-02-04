@@ -18,5 +18,10 @@
     "esModuleInterop": true,
     "skipLibCheck": true,
     "moduleResolution": "node16"
-  }
+  },
+   "exclude": [
+    "node_modules",
+    "prisma",
+    "prisma.config.ts"
+  ]
 }
