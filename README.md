@@ -37,6 +37,48 @@ A API foi construída seguindo boas práticas de desenvolvimento, com validaçõ
 
 ---
 
+## 📥 Clonando o Repositório
+
+```bash
+git clone https://github.com/seu-usuario/mundo-geek-api.git
+cd mundo-geek-api
+```
+
+---
+
+## 📦 Instalando as Dependências
+
+```bash
+npm install
+# ou
+yarn install
+# ou
+pnpm install
+
+```
+
+---
+
+## ⚙️ Configuração do Banco de Dados
+
+A API utiliza SQLite como banco de dados, gerenciado através do Prisma ORM.
+
+1. Gere o cliente do Prisma:
+
+```bash
+npx prisma generate
+
+```
+
+2. Execute as migrations:
+
+```bash
+npx prisma migrate dev
+
+```
+
+---
+
 ## 🗄️ Banco de Dados e ORM
 
 Para o gerenciamento e persistência dos dados, foi utilizado:
