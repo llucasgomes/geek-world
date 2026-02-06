@@ -20,7 +20,7 @@ export const getAllProdutosService = async (
   reply: FastifyReply,
 ) => {
   const produtos = await getAllProdutosModel()
-  return reply.send(produtos)
+  return reply.status(200).send(produtos)
 }
 
 export const getProdutoByIdService = async (

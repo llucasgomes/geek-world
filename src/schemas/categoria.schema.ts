@@ -18,6 +18,6 @@ export const CategoriaResponseSchema = z.object({
   id: z.uuid(),
   nome: z.string(),
   descricao: z.string().nullable(),
-  createdAt: z.date(),
-  updatedAt: z.date(),
+  dataCriacao: z.coerce.date(),
+  dataAtualizacao: z.coerce.date(),
 })

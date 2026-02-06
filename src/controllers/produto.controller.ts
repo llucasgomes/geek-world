@@ -11,7 +11,6 @@ import {
 
 import {
   ProdutoParamsSchema,
-  ProdutoResponseSchema,
   ProdutoSchema,
   ProdutoUpdateSchema,
 } from '../schemas/produto.schema'
@@ -25,7 +24,7 @@ export async function produtoController(server: FastifyInstance) {
         tags: ['Produto'],
         body: ProdutoSchema,
         response: {
-          201: ProdutoResponseSchema.describe('Produto criado com sucesso'),
+          // 201: ProdutoResponseSchema.describe('Produto criado com sucesso'),
           400: z.object({ message: z.string() }).describe('Dados inválidos'),
           404: z
             .object({ message: z.string() })
@@ -46,7 +45,7 @@ export async function produtoController(server: FastifyInstance) {
         description: 'Lista todos os produtos',
         tags: ['Produto'],
         response: {
-          200: z.array(ProdutoResponseSchema),
+          200: z.array(z.any()).describe('Lista de produtos'),
         },
       },
     },
@@ -61,7 +60,7 @@ export async function produtoController(server: FastifyInstance) {
         tags: ['Produto'],
         params: ProdutoParamsSchema,
         response: {
-          200: ProdutoResponseSchema,
+          200: z.any().describe('Produto encontrado'),
           404: z.object({ message: z.string() }),
         },
       },
@@ -78,7 +77,7 @@ export async function produtoController(server: FastifyInstance) {
         params: ProdutoParamsSchema,
         body: ProdutoUpdateSchema,
         response: {
-          200: ProdutoResponseSchema,
+          200: z.any().describe('Produto atualizado com sucesso'),
           400: z.object({ message: z.string() }),
           404: z.object({ message: z.string() }),
         },

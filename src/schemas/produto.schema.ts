@@ -24,9 +24,9 @@ export const ProdutoResponseSchema = z.object({
   id: z.uuid(),
   nome: z.string(),
   descricao: z.string().nullable(),
-  preco: z.number(),
+  preco: z.string(),
   estoque: z.number(),
   categoriaId: z.uuid(),
-  createdAt: z.date(),
-  updatedAt: z.date(),
+  dataCriacao: z.date(),
+  dataAtualizacao: z.date(),
 })
